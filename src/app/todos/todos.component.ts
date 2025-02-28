@@ -9,7 +9,7 @@ const client = generateClient<Schema>();
 interface Todo {
   id: string;
   content: string;
-  count?: number;
+  count: number;
 }
 
 @Component({
@@ -31,7 +31,10 @@ export class TodosComponent implements OnInit {
     try {
       client.models.Todo.observeQuery().subscribe({
         next: ({ items, isSynced }) => {
-          this.todos = items as Todo[];
+          this.todos = items.map(item => ({
+            ...item,
+            count: item.count || 1,
+          })) as Todo[];
         },
       });
     } catch (error) {

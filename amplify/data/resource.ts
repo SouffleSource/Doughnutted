@@ -10,6 +10,7 @@ const schema = a.schema({
   Todo: a
     .model({
       content: a.string(),
+      count: a.integer(), // Add the count field
     })
     .authorization((allow) => [allow.publicApiKey()]),
 });

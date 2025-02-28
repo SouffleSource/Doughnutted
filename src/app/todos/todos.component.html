@@ -4,12 +4,15 @@
     <input type="text" [(ngModel)]="newTodoContent" placeholder="Joe Bloggs">
     <button (click)="createTodo()">Add Victim</button>
     <ul>
-        <li 
-            *ngFor="let todo of todos;" (click)="deleteTodo(todo.id)">
-            {{ todo.content }} ({{ todo.count || 1 }})
+        <li *ngFor="let todo of todos;" (click)="deleteTodo(todo.id)">
+            {{ todo.content }} ({{ todo.count }})
         </li>
-        
     </ul>
     <div>
+        🥳 App successfully hosted. Try creating a new todo.
+        <br />
+        <a href="https://docs.amplify.aws/gen2/start/quickstart/">
+            Review next steps of this tutorial.
+        </a>
     </div>
 </main>
