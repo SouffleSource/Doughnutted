@@ -6,6 +6,12 @@ import type { Schema } from '../../../amplify/data/resource';
 
 const client = generateClient<Schema>();
 
+interface Todo {
+  id: string;
+  content: string;
+  count?: number;
+}
+
 @Component({
   selector: 'app-todos',
   standalone: true,
@@ -14,7 +20,7 @@ const client = generateClient<Schema>();
   styleUrl: './todos.component.css',
 })
 export class TodosComponent implements OnInit {
-  todos: any[] = [];
+  todos: Todo[] = [];
   newTodoContent: string = '';
 
   ngOnInit(): void {
@@ -25,7 +31,7 @@ export class TodosComponent implements OnInit {
     try {
       client.models.Todo.observeQuery().subscribe({
         next: ({ items, isSynced }) => {
-          this.todos = items;
+          this.todos = items as Todo[];
         },
       });
     } catch (error) {
@@ -35,15 +41,18 @@ export class TodosComponent implements OnInit {
 
   createTodo() {
     if (this.newTodoContent.trim()) {
-      try {
+      const existingTodo = this.todos.find(todo => todo.content.toLowerCase() === this.newTodoContent.toLowerCase());
+      if (existingTodo) {
+        existingTodo.count = (existingTodo.count || 1) + 1;
+        client.models.Todo.update(existingTodo);
+      } else {
         client.models.Todo.create({
           content: this.newTodoContent,
-        });
-        this.newTodoContent = '';
-        this.listTodos();
-      } catch (error) {
-        console.error('error creating todo', error);
+          count: 1,
+        } as Todo);
       }
+      this.newTodoContent = '';
+      this.listTodos();
     }
   }
 

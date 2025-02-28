@@ -6,7 +6,7 @@
     <ul>
         <li 
             *ngFor="let todo of todos;" (click)="deleteTodo(todo.id)">
-            {{ todo.content }}
+            {{ todo.content }} ({{ todo.count || 1 }})
         </li>
         
     </ul>
