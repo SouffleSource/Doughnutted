@@ -1,12 +1,14 @@
 <!-- todos.component.html -->
 <main>
-    <h1>My todos</h1>
+    <h1>You've been doughnutted</h1>
+    <input type="text" [(ngModel)]="newTodoContent" placeholder="Joe Bloggs">
     <button (click)="createTodo()">+ new</button>
     <ul>
         <li 
             *ngFor="let todo of todos;">
             {{ todo.content }}
         </li>
+        
     </ul>
     <div>
         🥳 App successfully hosted. Try creating a new todo.

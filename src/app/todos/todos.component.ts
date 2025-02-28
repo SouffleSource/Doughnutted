@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { generateClient } from 'aws-amplify/data';
 import type { Schema } from '../../../amplify/data/resource';
 
@@ -8,12 +9,13 @@ const client = generateClient<Schema>();
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.css',
 })
 export class TodosComponent implements OnInit {
   todos: any[] = [];
+  newTodoContent: string = '';
 
   ngOnInit(): void {
     this.listTodos();
@@ -32,13 +34,20 @@ export class TodosComponent implements OnInit {
   }
 
   createTodo() {
-    try {
-      client.models.Todo.create({
-        content: window.prompt('Todo content'),
-      });
-      this.listTodos();
-    } catch (error) {
-      console.error('error creating todos', error);
+    if (this.newTodoContent.trim()) {
+      try {
+        client.models.Todo.create({
+          content: this.newTodoContent,
+        });
+        this.newTodoContent = '';
+        this.listTodos();
+      } catch (error) {
+        console.error('error creating todo', error);
+      }
     }
+  }
+
+  deleteTodo(id: string) {
+    client.models.Todo.delete({ id });
   }
 }
