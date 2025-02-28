@@ -28,7 +28,7 @@ body {
     color: white;
   }
   button:hover {
-    border-color: #ff76d1;
+    border-color: #646cff;
   }
   button:focus,
   button:focus-visible {
