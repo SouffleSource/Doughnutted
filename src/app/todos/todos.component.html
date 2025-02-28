@@ -1,11 +1,16 @@
 <!-- todos.component.html -->
 <main>
     <h1>You've been doughnutted</h1>
+    <input type="text" [(ngModel)]="name" (keyup.enter)="submitName()" placeholder="Enter your name">
+    <button (click)="submitName()">Submit</button>
+    <p *ngIf="message">{{ message }}</p>
     <button (click)="createTodo()">+ new</button>
     <ul>
-      <li *ngFor="let todo of todos;" (click)="deleteTodo(todo.id)">
-          {{ todo.content }}
-      </li>
+        <li 
+            *ngFor="let todo of todos;">
+            {{ todo.content }}
+        </li>
+        
     </ul>
     <div>
         🥳 App successfully hosted. Try creating a new todo.

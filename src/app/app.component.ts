@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TodosComponent } from './todos/todos.component';
 import { Amplify } from 'aws-amplify';
-import outputs from '../../amplify_outputs.json';
+import outputs from '../amplify_outputs.json';
 
 Amplify.configure(outputs);
 
