@@ -8,15 +8,15 @@
             <tr>
                 <th>Name</th>
                 <th>Offenses</th>
-                <th>Doughnuts owed</th>
-                <th>Action</th>
+                <th>Owed</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let todo of todos;">
-                <td class="left-align">{{ todo.content }}</td>
+                <td class="center-align">{{ todo.content }}</td>
                 <td class="center-align">{{ todo.count }}</td>
-                <td class="right-align">{{ todo.paid }}</td>
+                <td class="center-align">{{ todo.paid }}</td>
                 <td><button (click)="decreasePaid(todo)">Paid</button></td>
             </tr>
         </tbody>

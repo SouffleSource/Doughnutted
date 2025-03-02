@@ -6,12 +6,15 @@ table {
 
 th, td {
     border: 1px solid transparent; /* Set border color to transparent */
+    background-color: #f2f2f2;
     padding: 8px;
+    color: #333; /* Set text color to dark grey */
 }
 
 th {
     background-color: #f2f2f2;
     text-align: left;
+    color: #333; /* Set header text color to dark grey */
 }
 
 .left-align {
