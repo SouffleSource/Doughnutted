@@ -36,7 +36,7 @@ export class TodosComponent implements OnInit {
           this.todos = items.map(item => ({
             ...item,
             count: item.count || 1,
-            paid: item.paid || 1, // Initialize paid property
+            paid: item.paid !== undefined ? item.paid : 1, // Initialize paid property only if undefined
           })) as Todo[];
         },
       });
@@ -69,7 +69,7 @@ export class TodosComponent implements OnInit {
   }
 
   decreasePaid(todo: Todo) {
-    if (todo.paid >= 0) {
+    if (todo.paid > 0) {
       todo.paid -= 1;
       client.models.Todo.update(todo);
     }

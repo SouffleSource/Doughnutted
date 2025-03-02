@@ -3,12 +3,24 @@
     <h1>You've been doughnutted!</h1>
     <input type="text" [(ngModel)]="newTodoContent" placeholder="Enter Victims Name">
     <button (click)="createTodo()">Add Victim</button>
-    <ul>
-        <li *ngFor="let todo of todos;">
-            {{ todo.content }} (Count: {{ todo.count }}, Paid: {{ todo.paid }})
-            <button (click)="decreasePaid(todo)">Paid</button>
-        </li>
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Offenses</th>
+                <th>Doughnuts owed</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todos;">
+                <td class="left-align">{{ todo.content }}</td>
+                <td class="center-align">{{ todo.count }}</td>
+                <td class="right-align">{{ todo.paid }}</td>
+                <td><button (click)="decreasePaid(todo)">Paid</button></td>
+            </tr>
+        </tbody>
+    </table>
     <div>
         🥳 App successfully hosted. Try creating a new todo.
         <br />
