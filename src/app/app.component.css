@@ -1,5 +1,5 @@
 .image-container {
-    padding-top: 5%; /* Add padding to ensure the image is not clipped */
+    padding-top: 5px; /* Add padding to ensure the image is not clipped */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@
 .image-container img {
     max-width: 100%; /* Ensure the image scales properly within its container */
     height: auto;
-    margin-top: 20px; /* Add margin to ensure it is not clipped */
+    margin-top: 5px; /* Add margin to ensure it is not clipped */
 }
 
 #about {

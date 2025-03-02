@@ -29,6 +29,7 @@ button {
     cursor: pointer;
     transition: border-color 0.25s;
     color: white;
+    padding: 0 10px; /* Add horizontal padding */
 }
 button:hover {
     border-color: #e5934a;
@@ -70,7 +71,7 @@ a {
 h1 {
     text-align: center;
     color: white;
-    font-size: 3.5em; 
+    font-size: 3em; 
 }
 
 input[type="text"] {
@@ -81,4 +82,13 @@ input[type="text"] {
     border: 1px solid transparent;
     font-family: inherit;
     box-sizing: border-box;
+    padding: 0 10px; /* Add horizontal padding */
+}
+
+table {
+    padding: 0 10px; /* Add horizontal padding */
+}
+
+#about {
+    padding: 0 10px; /* Add horizontal padding */
 }
