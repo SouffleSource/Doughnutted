@@ -50,7 +50,7 @@ export class TodosComponent implements OnInit {
       const existingTodo = this.todos.find(todo => todo.content.toLowerCase() === this.newTodoContent.toLowerCase());
       if (existingTodo) {
         existingTodo.count = (existingTodo.count || 1) + 1;
-        existingTodo.paid = (existingTodo.paid || 1) + 1;
+        existingTodo.paid = existingTodo.paid + 1; // Increment paid by 1
         client.models.Todo.update(existingTodo);
       } else {
         client.models.Todo.create({
