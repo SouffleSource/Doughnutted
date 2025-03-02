@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { generateClient } from 'aws-amplify/data';
@@ -25,6 +25,8 @@ export class TodosComponent implements OnInit {
   todos: Todo[] = [];
   newTodoContent: string = '';
 
+  constructor(private renderer: Renderer2) {}
+
   ngOnInit(): void {
     this.listTodos();
   }
@@ -38,6 +40,7 @@ export class TodosComponent implements OnInit {
             count: item.count || 1,
             paid: item.paid !== undefined ? item.paid : 1, // Initialize paid property only if undefined
           })) as Todo[];
+          this.todos.sort((a, b) => b.count - a.count); // Sort todos in descending order based on count
         },
       });
     } catch (error) {
@@ -62,6 +65,7 @@ export class TodosComponent implements OnInit {
       this.newTodoContent = '';
       this.listTodos();
       this.launchConfetti(); // Invoke confetti animation
+      this.pulseHeader(); // Invoke pulse animation on header
     }
   }
 
@@ -119,5 +123,15 @@ export class TodosComponent implements OnInit {
       particleCount: randomInRange(50, 100),
       origin: { y: 0.6 },
     });
+  }
+
+  pulseHeader() {
+    const header = document.querySelector('h1');
+    if (header) {
+      this.renderer.addClass(header, 'pulse');
+      setTimeout(() => {
+        this.renderer.removeClass(header, 'pulse');
+      }, 1000); // Remove the class after the animation duration
+    }
   }
 }
