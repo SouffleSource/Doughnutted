@@ -11,6 +11,7 @@ const schema = a.schema({
     .model({
       content: a.string(),
       count: a.integer(), // Add the count field
+      paid: a.integer(), // Add the paid field
     })
     .authorization((allow) => [allow.publicApiKey()]),
 });
