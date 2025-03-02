@@ -22,7 +22,7 @@ button {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #f3ac56;
+    background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
     color: white;
@@ -67,7 +67,7 @@ a {
 h1 {
     text-align: center;
     color: white;
-    font-size: 4em; 
+    font-size: 2.5em; 
 }
 
 input[type="text"] {
