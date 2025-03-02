@@ -1,7 +1,6 @@
 table {
     width: 100%;
     border-collapse: separate; /* Use separate border model */
-    border-spacing: 10px; /* Add 10px space between columns */
     margin-top: 20px;
     border-radius: 10px; /* Add border-radius to the table */
     overflow: hidden; /* Ensure the border-radius is applied to the table */

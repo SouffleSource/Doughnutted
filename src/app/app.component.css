@@ -1,3 +1,4 @@
 .image-container {
     margin-top: 20px; /* Add margin to the top of the image container */
+    padding-top: 20px; /* Add padding to ensure the image is not clipped */
 }
