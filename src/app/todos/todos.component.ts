@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { generateClient } from 'aws-amplify/data';
 import type { Schema } from '../../../amplify/data/resource';
+import confetti from 'canvas-confetti';
 
 const client = generateClient<Schema>();
 
@@ -13,7 +14,7 @@ interface Todo {
 }
 
 @Component({
-  selector: 'app-todos',
+  selector: 'app-todos', // Ensure the selector is correctly set
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './todos.component.html',
