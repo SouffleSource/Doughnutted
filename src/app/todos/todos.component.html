@@ -1,7 +1,7 @@
 <!-- todos.component.html -->
 <main>
     <h1>You've been doughnutted!</h1>
-    <input type="text" [(ngModel)]="newTodoContent" placeholder="Enter Offenders Name">
+    <input #todoInput type="text" [(ngModel)]="newTodoContent" placeholder="Enter Offenders Name" (keydown.enter)="createTodo()">
     <button (click)="createTodo()">Add Offender</button>
     <table>
         <thead>
@@ -13,8 +13,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let todo of todos;">
-                <td class="center-align">{{ todo.content }}</td>
+            <tr *ngFor="let todo of todos; let i = index;">
+                <td class="center-align">
+                    {{ todo.content }}
+                    <span *ngIf="i === 0">🥇</span>
+                    <span *ngIf="i === 1">🥈</span>
+                    <span *ngIf="i === 2">🥉</span>
+                </td>
                 <td class="center-align">{{ todo.count }}</td>
                 <td class="center-align">{{ todo.paid }}</td>
                 <td><button (click)="decreasePaid(todo)">Paid</button></td>
