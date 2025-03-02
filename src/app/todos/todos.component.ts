@@ -73,6 +73,7 @@ export class TodosComponent implements OnInit {
     if (todo.paid > 0) {
       todo.paid -= 1;
       client.models.Todo.update(todo);
+      this.launchConfettiCannon(); // Invoke confetti cannon animation
     }
   }
 
@@ -105,5 +106,18 @@ export class TodosComponent implements OnInit {
         origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
       });
     }, 250);
+  }
+
+  launchConfettiCannon() {
+    function randomInRange(min: number, max: number) {
+      return Math.random() * (max - min) + min;
+    }
+
+    confetti({
+      angle: randomInRange(55, 125),
+      spread: randomInRange(50, 70),
+      particleCount: randomInRange(50, 100),
+      origin: { y: 0.6 },
+    });
   }
 }

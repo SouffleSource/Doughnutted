@@ -18,7 +18,6 @@ th {
     background-color: #f2f2f2;
     text-align: center;
     color: #333; /* Set header text color to dark grey */
-    border-radius: 10px 10px 0 0; /* Add border-radius to the header */
 }
 
 .center-align {
