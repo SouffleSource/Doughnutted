@@ -1,13 +1,23 @@
 .image-container {
     margin-top: 20px; /* Add margin to the top of the image container */
     padding-top: 20px; /* Add padding to ensure the image is not clipped */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure the image scales properly within its container */
+    height: auto;
+    margin-top: 20px; /* Add margin to ensure it is not clipped */
 }
 
 #about {
     margin: 40px auto; /* Center the section and add vertical spacing */
     padding: 20px;
     max-width: 800px; /* Limit the width for better readability */
-    background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent background */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }

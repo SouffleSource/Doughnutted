@@ -4,18 +4,19 @@ table {
     margin-top: 20px;
     border-radius: 10px; /* Add border-radius to the table */
     overflow: hidden; /* Ensure the border-radius is applied to the table */
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 th, td {
-    border: 1px solid transparent; /* Set border color to transparent */
-    background-color: #f2f2f2;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent background */
     padding: 8px;
     color: #333; /* Set text color to dark grey */
     text-align: center;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent background */
     text-align: center;
     color: #333; /* Set header text color to dark grey */
 }
