@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: radial-gradient(circle, rgb(247, 165, 255), rgb(31, 31, 31));
+    background: radial-gradient(circle, rgb(247, 165, 255), rgb(25, 42, 81));
     display: flex;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     height: 100vh;
