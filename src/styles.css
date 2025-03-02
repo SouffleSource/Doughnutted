@@ -21,7 +21,7 @@ main {
 button {
     border-radius: 10px;
     border: 1px solid transparent;
-    padding: 0.6em 1.2em;
+    padding: 0.8em 1.5em; /* Increase padding to ensure text is not too close to the edge */
     font-size: 1em;
     font-weight: bold; /* Make the text bold */
     font-family: inherit;
@@ -30,6 +30,7 @@ button {
     transition: border-color 0.25s;
     color: white;
     padding: 0 10px; /* Add horizontal padding */
+    width: auto; /* Ensure the width is auto for all buttons */
 }
 button:hover {
     border-color: #e5934a;
@@ -37,6 +38,12 @@ button:hover {
 button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+}
+
+input[type="text"], button:not([ng-reflect-ng-class="paid"]) {
+    width: 80%; /* Decrease the width of the input box and main button */
+    max-width: 300px; /* Set a maximum width */
+    margin: 0 auto; /* Center the input and button */
 }
 
 ul {
@@ -71,12 +78,12 @@ a {
 h1 {
     text-align: center;
     color: white;
-    font-size: 3em; 
+    font-size: 3.2em; 
 }
 
 input[type="text"] {
     margin: 10px 0;
-    padding: 0.6em 1.2em;
+    padding: 0.8em 1.5em; /* Increase padding to ensure text is not too close to the edge */
     font-size: 1em;
     border-radius: 10px;
     border: 1px solid transparent;
