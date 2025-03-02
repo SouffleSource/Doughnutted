@@ -69,7 +69,7 @@ export class TodosComponent implements OnInit {
   }
 
   decreasePaid(todo: Todo) {
-    if (todo.paid > 0) {
+    if (todo.paid >= 0) {
       todo.paid -= 1;
       client.models.Todo.update(todo);
     }
