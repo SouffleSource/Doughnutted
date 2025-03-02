@@ -50,6 +50,7 @@ export class TodosComponent implements OnInit {
 
   createTodo() {
     if (this.newTodoContent.trim()) {
+      this.newTodoContent = this.capitalizeWords(this.newTodoContent); // Capitalize first letter of each word
       const existingTodo = this.todos.find(todo => todo.content.toLowerCase() === this.newTodoContent.toLowerCase());
       if (existingTodo) {
         existingTodo.count = (existingTodo.count || 1) + 1;
@@ -67,6 +68,10 @@ export class TodosComponent implements OnInit {
       this.launchConfetti(); // Invoke confetti animation
       this.pulseHeader(); // Invoke pulse animation on header
     }
+  }
+
+  capitalizeWords(str: string): string {
+    return str.replace(/\b\w/g, char => char.toUpperCase());
   }
 
   deleteTodo(id: string) {
