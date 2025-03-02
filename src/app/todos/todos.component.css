@@ -1,6 +1,7 @@
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate; /* Use separate border model */
+    border-spacing: 10px; /* Add 10px space between columns */
     margin-top: 20px;
     border-radius: 10px; /* Add border-radius to the table */
     overflow: hidden; /* Ensure the border-radius is applied to the table */
@@ -16,7 +17,7 @@ th, td {
 
 th {
     background-color: #f2f2f2;
-    text-align: left;
+    text-align: center;
     color: #333; /* Set header text color to dark grey */
     border-radius: 10px 10px 0 0; /* Add border-radius to the header */
 }
