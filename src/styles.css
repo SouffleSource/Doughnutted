@@ -22,13 +22,13 @@ button {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
+    background-color: #f3ac56;
     cursor: pointer;
     transition: border-color 0.25s;
     color: white;
 }
 button:hover {
-    border-color: #000000;
+    border-color: #e5934a;
 }
 button:focus,
 button:focus-visible {
@@ -67,7 +67,7 @@ a {
 h1 {
     text-align: center;
     color: white;
-    font-size: 2.5em; 
+    font-size: 3.5em; 
 }
 
 input[type="text"] {
