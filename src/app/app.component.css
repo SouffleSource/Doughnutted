@@ -40,3 +40,15 @@
 #about a:hover {
     text-decoration: underline; /* Underline on hover */
 }
+
+.bullet {
+    position: relative;
+    padding-left: 20px; /* Add space for the bullet */
+}
+
+.bullet::before {
+    content: '•'; /* Bullet character */
+    position: absolute;
+    left: 0;
+    color: #333; /* Bullet color */
+}
