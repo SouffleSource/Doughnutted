@@ -1,10 +1,10 @@
 .image-container {
-    margin-top: 20px; /* Add margin to the top of the image container */
-    padding-top: 20px; /* Add padding to ensure the image is not clipped */
+    padding-top: 50%; /* Add padding to ensure the image is not clipped */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative; /* Ensure it respects document flow */
 }
 
 .image-container img {
