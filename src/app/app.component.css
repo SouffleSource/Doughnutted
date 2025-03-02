@@ -1,5 +1,5 @@
 .image-container {
-    padding-top: 20%; /* Add padding to ensure the image is not clipped */
+    padding-top: 5%; /* Add padding to ensure the image is not clipped */
     display: flex;
     justify-content: center;
     align-items: center;
