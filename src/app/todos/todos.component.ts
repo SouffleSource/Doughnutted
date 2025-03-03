@@ -102,9 +102,7 @@ export class TodosComponent implements OnInit {
   launchConfetti() {
     const duration = 15 * 1000;
     const animationEnd = Date.now() + duration;
-    const scalar = 2;
-    const donut = confetti.shapeFromText({ text: '🍩', scalar });
-    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0, shapes: [donut], scalar };
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
     function randomInRange(min: number, max: number) {
       return Math.random() * (max - min) + min;
