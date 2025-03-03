@@ -1,8 +1,10 @@
 <!-- todos.component.html -->
 <main>
     <h1>You've been doughnutted!</h1>
-    <input #todoInput type="text" [(ngModel)]="newTodoContent" placeholder="Enter Offenders Name" (keydown.enter)="createTodo()">
-    <button (click)="createTodo()">Add Offender</button>
+    <div class="container">
+        <input #todoInput type="text" [(ngModel)]="newTodoContent" placeholder="Enter Offenders Name" (keydown.enter)="createTodo()">
+        <button (click)="createTodo()">Add Offender</button>
+    </div>
     <div style="margin-top: 50px;"></div> <!-- Add space between button and table -->
     <table>
         <thead>

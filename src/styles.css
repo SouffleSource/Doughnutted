@@ -24,10 +24,8 @@ main {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; 
+    align-items: center;
     width: 100%;
-    max-width: 400px; /* Adjust based on desired layout */
 }
 
 /* Button Styles (With Subtle Shadow) */
