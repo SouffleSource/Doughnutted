@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { generateClient } from 'aws-amplify/data';
 import type { Schema } from '../../../amplify/data/resource';
 import confetti from 'canvas-confetti';
+import { Storage } from 'aws-amplify';
 
 const client = generateClient<Schema>();
 
@@ -91,12 +92,26 @@ export class TodosComponent implements OnInit {
     client.models.Todo.delete({ id });
   }
 
-  decreasePaid(todo: Todo) {
-    if (todo.paid > 0) {
-      todo.paid -= 1;
-      client.models.Todo.update(todo);
-      this.launchConfettiCannon(); // Invoke confetti cannon animation
-    }
+  async decreasePaid(todo: Todo) {
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/*';
+    fileInput.onchange = async () => {
+      const file = fileInput.files?.[0];
+      if (file) {
+        try {
+          await Storage.put(`${todo.id}/${file.name}`, file, {
+            contentType: file.type,
+          });
+          todo.paid -= 1;
+          client.models.Todo.update(todo);
+          this.launchConfettiCannon(); // Invoke confetti cannon animation
+        } catch (error) {
+          console.error('Error uploading file:', error);
+        }
+      }
+    };
+    fileInput.click();
   }
 
   launchConfetti() {
