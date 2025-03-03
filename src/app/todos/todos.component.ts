@@ -24,6 +24,7 @@ interface Todo {
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
   newTodoContent: string = '';
+  errorMessage: string = ''; // Add error message property
 
   constructor(private renderer: Renderer2) {}
 
@@ -50,24 +51,34 @@ export class TodosComponent implements OnInit {
 
   createTodo() {
     if (this.newTodoContent.trim()) {
-      this.newTodoContent = this.capitalizeWords(this.newTodoContent); // Capitalize first letter of each word
-      const existingTodo = this.todos.find(todo => todo.content.toLowerCase() === this.newTodoContent.toLowerCase());
-      if (existingTodo) {
-        existingTodo.count = (existingTodo.count || 1) + 1;
-        existingTodo.paid = existingTodo.paid + 1; // Increment paid by 1
-        client.models.Todo.update(existingTodo);
+      if (this.validateInput(this.newTodoContent)) {
+        this.newTodoContent = this.capitalizeWords(this.newTodoContent); // Capitalize first letter of each word
+        const existingTodo = this.todos.find(todo => todo.content.toLowerCase() === this.newTodoContent.toLowerCase());
+        if (existingTodo) {
+          existingTodo.count = (existingTodo.count || 1) + 1;
+          existingTodo.paid = existingTodo.paid + 1; // Increment paid by 1
+          client.models.Todo.update(existingTodo);
+        } else {
+          client.models.Todo.create({
+            content: this.newTodoContent,
+            count: 1,
+            paid: 1,
+          } as Todo);
+        }
+        this.newTodoContent = '';
+        this.errorMessage = ''; // Clear error message
+        this.listTodos();
+        this.launchConfetti(); // Invoke confetti animation
+        this.pulseHeader(); // Invoke pulse animation on header
       } else {
-        client.models.Todo.create({
-          content: this.newTodoContent,
-          count: 1,
-          paid: 1,
-        } as Todo);
+        this.errorMessage = 'Input should be in the format: {firstname} {first initial of lastname}, max 16 characters.'; // Set error message
       }
-      this.newTodoContent = '';
-      this.listTodos();
-      this.launchConfetti(); // Invoke confetti animation
-      this.pulseHeader(); // Invoke pulse animation on header
     }
+  }
+
+  validateInput(input: string): boolean {
+    const regex = /^[A-Za-z]+ [A-Za-z]$/;
+    return regex.test(input) && input.length <= 16;
   }
 
   capitalizeWords(str: string): string {
