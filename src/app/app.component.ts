@@ -4,7 +4,7 @@ import { TodosComponent } from './todos/todos.component';
 import { Amplify } from 'aws-amplify';
 import outputs from '../../amplify_outputs.json';
 
-Amplify.configure(outputs); // Ensure this is called early
+Amplify.configure(outputs);
 
 @Component({
   selector: 'app-root',
