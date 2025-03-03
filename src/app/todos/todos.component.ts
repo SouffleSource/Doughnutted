@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { generateClient } from 'aws-amplify/data';
 import type { Schema } from '../../../amplify/data/resource';
 import confetti from 'canvas-confetti';
-import { uploadData } from '@aws-amplify/storage';
+import { Storage } from 'aws-amplify';
 
 const client = generateClient<Schema>();
 
@@ -98,14 +98,10 @@ export class TodosComponent implements OnInit {
     fileInput.accept = 'image/*';
     fileInput.onchange = async () => {
       const file = fileInput.files?.[0];
-      if (file && file.type.startsWith('image/')) {
+      if (file) {
         try {
-          await uploadData({
-            data: file,
-            path: `uploads/${todo.id}/${file.name}`,
-            options: {
-              contentType: file.type,
-            },
+          await Storage.put(`${todo.id}/${file.name}`, file, {
+            contentType: file.type,
           });
           todo.paid -= 1;
           client.models.Todo.update(todo);
@@ -113,8 +109,6 @@ export class TodosComponent implements OnInit {
         } catch (error) {
           console.error('Error uploading file:', error);
         }
-      } else {
-        console.error('Invalid file type. Only images are allowed.');
       }
     };
     fileInput.click();
