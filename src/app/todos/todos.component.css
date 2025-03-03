@@ -14,21 +14,6 @@
     animation: pulse 1s ease-in-out;
 }
 
-.table-container {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.table-container.hidden {
-    opacity: 0;
-}
-
 table {
     width: 100%;
     border-collapse: separate; /* Use separate border model */

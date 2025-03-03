@@ -6,29 +6,28 @@
         <button (click)="createTodo()">Add Offender</button>
         <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div> <!-- Display error message -->
     </div>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>👮 Offender</th>
-                    <th>🏆 League Table</th>
-                    <th>🍩 Debt</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let todo of todos; let i = index;">
-                    <td class="center-align">
-                        {{ todo.content }}
-                        <span *ngIf="i === 0">🥇</span>
-                        <span *ngIf="i === 1">🥈</span>
-                        <span *ngIf="i === 2">🥉</span>
-                    </td>
-                    <td class="center-align">{{ todo.count }}</td>
-                    <td class="center-align">{{ todo.paid }}</td>
-                    <td><button (click)="decreasePaid(todo)">Paid</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <div style="margin-top: 50px;"></div> <!-- Add space between button and table -->
+    <table>
+        <thead>
+            <tr>
+                <th>👮 Offender</th>
+                <th>🏆 League Table</th>
+                <th>🍩 Debt</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todos; let i = index;">
+                <td class="center-align">
+                    {{ todo.content }}
+                    <span *ngIf="i === 0">🥇</span>
+                    <span *ngIf="i === 1">🥈</span>
+                    <span *ngIf="i === 2">🥉</span>
+                </td>
+                <td class="center-align">{{ todo.count }}</td>
+                <td class="center-align">{{ todo.paid }}</td>
+                <td><button (click)="decreasePaid(todo)">Paid</button></td>
+            </tr>
+        </tbody>
+    </table>
 </main>
