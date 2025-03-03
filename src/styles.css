@@ -21,8 +21,8 @@ main {
 button {
     border-radius: 10px;
     border: 1px solid transparent;
-    padding: 1.5em 2em; /* Increase padding to ensure text is not too close to the edge */
-    font-size: 1.25em;
+    padding: 3em 6em; /* Increase padding to ensure text is not too close to the edge */
+    font-size: 1em;
     font-weight: bold; /* Make the text bold */
     font-family: inherit;
     background-color: #f3ac56;
@@ -84,8 +84,8 @@ h1 {
 input[type="text"] {
     display: block; /* Ensure the input box is a block element */
     margin: 10px auto; /* Center the input box */
-    padding: 1.5em 2em; /* Increase padding to ensure text is not too close to the edge */
-    font-size: 1.25em;
+    padding: 3em 6em; /* Increase padding to ensure text is not too close to the edge */
+    font-size: 1em;
     border-radius: 10px;
     border: 1px solid transparent;
     font-family: inherit;
