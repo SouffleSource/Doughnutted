@@ -21,7 +21,7 @@ main {
 button {
     border-radius: 10px;
     border: 1px solid transparent;
-    padding: 3em 6em; /* Increase padding to ensure text is not too close to the edge */
+    padding: 0.8em 1.5em; /* Increase padding to ensure text is not too close to the edge */
     font-size: 1em;
     font-weight: bold; /* Make the text bold */
     font-family: inherit;
@@ -29,8 +29,9 @@ button {
     cursor: pointer;
     transition: border-color 0.25s;
     color: white;
-    padding: 0 10px; /* Add horizontal padding */
-    width: auto; /* Ensure the width is auto for all buttons */
+    width: 30%; /* Set width to 30% of the page */
+    height: 2em; /* Set height to 2 times the font size */
+    line-height: 2em; /* Ensure text is vertically centered */
 }
 button:hover {
     border-color: #e5934a;
@@ -84,13 +85,15 @@ h1 {
 input[type="text"] {
     display: block; /* Ensure the input box is a block element */
     margin: 10px auto; /* Center the input box */
-    padding: 3em 6em; /* Increase padding to ensure text is not too close to the edge */
+    padding: 0.8em 1.5em; /* Increase padding to ensure text is not too close to the edge */
     font-size: 1em;
     border-radius: 10px;
     border: 1px solid transparent;
     font-family: inherit;
     box-sizing: border-box;
-    padding: 0 10px; /* Add horizontal padding */
+    width: 30%; /* Set width to 30% of the page */
+    height: 2em; /* Set height to 2 times the font size */
+    line-height: 2em; /* Ensure text is vertically centered */
 }
 
 table {
