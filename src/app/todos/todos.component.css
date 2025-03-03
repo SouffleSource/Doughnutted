@@ -15,7 +15,10 @@
 }
 
 table {
-    width: 100%; /* Ensure it doesn't touch the edges on mobile */
+    margin: 80px auto; /* Center the section and add vertical spacing */
+    padding: 20px;
+    max-width: 800px; /* Limit the width for better readability */
+    width: 90%; /* Ensure it doesn't touch the edges on mobile */
     border-collapse: separate; /* Use separate border model */
     margin-top: 20px;
     border-radius: 10px; /* Add border-radius to the table */
