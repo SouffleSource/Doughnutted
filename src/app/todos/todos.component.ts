@@ -25,6 +25,7 @@ export class TodosComponent implements OnInit {
   todos: Todo[] = [];
   newTodoContent: string = '';
   errorMessage: string = ''; // Add error message property
+  showHeader: boolean = false; // Add property to control header visibility
 
   constructor(private renderer: Renderer2) {}
 
@@ -67,6 +68,7 @@ export class TodosComponent implements OnInit {
         }
         this.newTodoContent = '';
         this.errorMessage = ''; // Clear error message
+        this.showHeader = true; // Show header
         this.listTodos();
         this.launchConfetti(); // Invoke confetti animation
         this.pulseHeader(); // Invoke pulse animation on header
