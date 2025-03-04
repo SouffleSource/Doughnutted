@@ -3,16 +3,25 @@
     <h1 *ngIf="showHeader">You've been doughnutted!</h1> <!-- Conditionally display header -->
     <div class="container">
         <input #todoInput type="text" [(ngModel)]="newTodoContent" placeholder="Enter Offenders Name" (keydown.enter)="createTodo()" [disabled]="hasSubmitted">
-        <button (click)="createTodo()" [disabled]="hasSubmitted">Add Offender</button>
+        <button class="add-offender-button" (click)="createTodo()" [disabled]="hasSubmitted">Add Offender</button>
         <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div> <!-- Display error message -->
     </div>
     <div style="margin-top: 50px;"></div> <!-- Add space between button and table -->
     <table>
         <thead>
             <tr>
-                <th>👮 Offender</th>
-                <th>🏆 League Table</th>
-                <th>🍩 Debt</th>
+                <th class="left-align">
+                    <span class="emoji">👮</span>
+                    <span class="text">Offender</span>
+                </th>
+                <th>
+                    <span class="emoji">🏆</span>
+                    <span class="text">League Table</span>
+                </th>
+                <th>
+                    <span class="emoji">🍩</span>
+                    <span class="text">Debt</span>
+                </th>
                 <th></th>
             </tr>
         </thead>
@@ -26,7 +35,7 @@
                 </td>
                 <td class="center-align">{{ todo.count }}</td>
                 <td class="center-align">{{ todo.paid }}</td>
-                <td><button (click)="decreasePaid(todo)">Paid</button></td>
+                <td><button class="paid-button" (click)="decreasePaid(todo)">Paid</button></td>
             </tr>
         </tbody>
     </table>

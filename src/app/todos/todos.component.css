@@ -15,26 +15,24 @@
 }
 
 table {
-    margin: 20px; /* Center the section and add vertical spacing */
-    color: #ffffff;
-    padding: 20px;
-    width: auto; /* Ensure it doesn't touch the edges on mobile */
-    border-collapse: separate; /* Use separate border model */
-    border-radius: 10px; /* Add border-radius to the table */
-    overflow: hidden; /* Ensure the border-radius is applied to the table */
-    background-color: rgba(0, 0, 0, 0.3); /* More transparent background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%;
+    border-collapse: separate;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
     padding: 8px;
-    color: #ffffff; /* Set text color to dark grey */
+    color: #333;
     text-align: center;
 }
 
 th {
     text-align: center;
-    color: #ffffff; /* Set header text color to dark grey */
+    color: #333;
 }
 
 .center-align {
@@ -45,9 +43,115 @@ th {
     text-align: left;
 }
 
+/* New styles for header formatting */
+th {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60px; /* Adjust as needed */
+}
+
+th .emoji {
+    font-size: 1.2em;
+    margin-bottom: 4px;
+}
+
+th .text {
+    font-size: 0.9em;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    th {
+        height: auto;
+        padding: 8px 4px;
+    }
+
+    th .emoji {
+        font-size: 1em;
+        margin-bottom: 2px;
+    }
+
+    th .text {
+        font-size: 0.8em;
+    }
+}
+
 .error-message {
     color: #ffffff; /* Red color for error message */
     font-size: 0.9em;
     margin-top: 10px;
     text-align: center;
+}
+
+/* Add Offender Button Styles */
+.add-offender-button {
+    border: none; /* No border for clean look */
+    border-radius: 10px;
+    padding: 0.8em 0.8em; /* Adequate padding */
+    font-size: 1em;
+    font-weight: bold;
+    font-family: inherit;
+    background-color: #f3ac56;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.15s, box-shadow 0.25s;
+    width: 80%; /* More flexible width */
+    max-width: 300px; /* Prevents being too wide */
+    height: auto; /* Auto height for better flexibility */
+    text-align: center;
+    line-height: normal; /* Prevents vertical alignment issues */
+    display: block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.add-offender-button:hover {
+    background-color: #e5934a; /* Slightly darker on hover */
+    transform: scale(1.02); /* Subtle effect */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+}
+
+.add-offender-button:focus,
+.add-offender-button:focus-visible {
+    outline: none;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Extra focus indication */
+}
+
+/* Paid Button Styles */
+.paid-button {
+    border: none; /* No border for clean look */
+    border-radius: 10px;
+    padding: 0.8em 0.8em; /* Adequate padding */
+    font-size: 1em;
+    font-weight: bold;
+    font-family: inherit;
+    background-color: #f3ac56;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.15s, box-shadow 0.25s;
+    max-width: 300px; /* Prevents being too wide */
+    height: auto; /* Auto height for better flexibility */
+    text-align: center;
+    line-height: normal; /* Prevents vertical alignment issues */
+    display: block;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.paid-button:hover {
+    background-color: #e5934a; /* Slightly darker on hover */
+    transform: scale(1.02); /* Subtle effect */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+}
+
+.paid-button:focus,
+.paid-button:focus-visible {
+    outline: none;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Extra focus indication */
 }
