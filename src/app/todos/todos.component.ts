@@ -26,11 +26,13 @@ export class TodosComponent implements OnInit {
   newTodoContent: string = '';
   errorMessage: string = ''; // Add error message property
   showHeader: boolean = false; // Add property to control header visibility
+  hasSubmitted: boolean = false; // Track if a todo has been submitted
 
   constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {
     this.listTodos();
+    this.hasSubmitted = localStorage.getItem('hasSubmitted') === 'true';
   }
 
   listTodos() {
@@ -51,6 +53,11 @@ export class TodosComponent implements OnInit {
   }
 
   createTodo() {
+    if (this.hasSubmitted) {
+      this.errorMessage = 'You have already submitted a todo.';
+      return;
+    }
+
     if (this.newTodoContent.trim()) {
       if (this.validateInput(this.newTodoContent)) {
         this.newTodoContent = this.capitalizeWords(this.newTodoContent); // Capitalize first letter of each word
@@ -69,6 +76,8 @@ export class TodosComponent implements OnInit {
         this.newTodoContent = '';
         this.errorMessage = ''; // Clear error message
         this.showHeader = true; // Show header
+        this.hasSubmitted = true; // Mark as submitted
+        localStorage.setItem('hasSubmitted', 'true'); // Store submission status
         this.listTodos();
         this.launchConfetti(); // Invoke confetti animation
         this.pulseHeader(); // Invoke pulse animation on header
