@@ -16,24 +16,25 @@
 
 table {
     margin: 20px; /* Center the section and add vertical spacing */
+    color: #ffffff;
     padding: 20px;
     width: auto; /* Ensure it doesn't touch the edges on mobile */
     border-collapse: separate; /* Use separate border model */
     border-radius: 10px; /* Add border-radius to the table */
     overflow: hidden; /* Ensure the border-radius is applied to the table */
-    background-color: rgba(255, 255, 255, 0.3); /* More transparent background */
+    background-color: rgba(0, 0, 0, 0.3); /* More transparent background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 th, td {
     padding: 8px;
-    color: #333; /* Set text color to dark grey */
+    color: #ffffff; /* Set text color to dark grey */
     text-align: center;
 }
 
 th {
     text-align: center;
-    color: #333; /* Set header text color to dark grey */
+    color: #ffffff; /* Set header text color to dark grey */
 }
 
 .center-align {

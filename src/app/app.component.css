@@ -19,18 +19,18 @@
     padding: 20px;
     width: 90%; /* Ensure it doesn't touch the edges on mobile */
     max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.3); /* More transparent background */
+    background-color: rgba(0, 0, 0, 0.3); /* More transparent background */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 #about h2 {
     text-align: center; /* Center the heading */
-    color: #333; /* Dark grey text color */
+    color: #ffffff; /* Dark grey text color */
 }
 
 #about p, #about ol {
-    color: #333; /* Dark grey text color */
+    color: #ffffff; /* Dark grey text color */
     line-height: 1.6; /* Improve readability */
 }
 
@@ -52,5 +52,5 @@
     content: '•'; /* Bullet character */
     position: absolute;
     left: 0;
-    color: #333; /* Bullet color */
+    color: #ffffff; /* Bullet color */
 }

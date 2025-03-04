@@ -76,7 +76,7 @@ input[type="text"] {
     font-family: inherit;
     box-sizing: border-box;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.2); /* Light transparent fill */
+    background-color: rgba(0, 0, 0, 0.2); /* Light transparent fill */
     color: white;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     transition: background-color 0.25s, box-shadow 0.25s;
