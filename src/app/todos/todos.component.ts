@@ -32,7 +32,6 @@ export class TodosComponent implements OnInit {
 
   ngOnInit(): void {
     this.listTodos();
-    this.hasSubmitted = localStorage.getItem('hasSubmitted') === 'true';
   }
 
   listTodos() {
@@ -77,7 +76,6 @@ export class TodosComponent implements OnInit {
         this.errorMessage = ''; // Clear error message
         this.showHeader = true; // Show header
         this.hasSubmitted = true; // Mark as submitted
-        localStorage.setItem('hasSubmitted', 'true'); // Store submission status
         this.listTodos();
         this.launchConfetti(); // Invoke confetti animation
         this.pulseHeader(); // Invoke pulse animation on header
