@@ -20,65 +20,60 @@ table {
     margin-top: 20px;
     border-radius: 10px;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
     padding: 8px;
-    color: #333;
+    color: #ffffff;
     text-align: center;
 }
 
-th {
-    text-align: center;
-    color: #333;
-}
-
-.center-align {
-    text-align: center;
+td {
+    padding: 12px 8px;
+    vertical-align: middle;
 }
 
 .left-align {
     text-align: left;
 }
 
-/* New styles for header formatting */
-th {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 60px; /* Adjust as needed */
+.center-align {
+    text-align: center;
 }
 
+/* New styles for header formatting */
+th {
+    padding: 8px 4px;
+    vertical-align: top;
+    height: auto;
+}
+
+
 th .emoji {
-    font-size: 1.2em;
+    font-size: 1.5em;
+    display: block;
     margin-bottom: 4px;
 }
 
 th .text {
     font-size: 0.9em;
-    text-align: center;
+    display: block;
     line-height: 1.2;
+    white-space: normal;
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
-    th {
-        height: auto;
-        padding: 8px 4px;
-    }
-
     th .emoji {
-        font-size: 1em;
-        margin-bottom: 2px;
+        font-size: 1.2em;
     }
 
     th .text {
         font-size: 0.8em;
     }
 }
+
 
 .error-message {
     color: #ffffff; /* Red color for error message */
@@ -134,6 +129,7 @@ th .text {
     color: white;
     cursor: pointer;
     transition: background-color 0.25s, transform 0.15s, box-shadow 0.25s;
+    width: auto;
     max-width: 300px; /* Prevents being too wide */
     height: auto; /* Auto height for better flexibility */
     text-align: center;
