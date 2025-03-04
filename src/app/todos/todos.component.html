@@ -18,7 +18,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let todo of todos; let i = index;">
-                <td class="center-align">
+                <td class="left-align">
                     {{ todo.content }}
                     <span *ngIf="i === 0">🥇</span>
                     <span *ngIf="i === 1">🥈</span>

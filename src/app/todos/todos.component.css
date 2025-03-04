@@ -40,6 +40,10 @@ th {
     text-align: center;
 }
 
+.left-align {
+    text-align: left;
+}
+
 .error-message {
     color: #ffffff; /* Red color for error message */
     font-size: 0.9em;
