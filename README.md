@@ -2,7 +2,7 @@
 
 ## About Doughnutted
 
-Doughnutted is a fun, interactive web application designed to promote better cybersecurity practices in office environments. It turns the important habit of locking your computer when you step away into an engaging, donut-themed game.
+Doughnutted is an interactive web application designed to promote better cybersecurity practices in office environments. It turns the important habit of locking your computer when you step away into an engaging, donut-themed game.
 
 ## How It Works
 
