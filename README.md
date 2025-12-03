@@ -5,7 +5,7 @@
 Doughnutted is an interactive web application designed to promote better cybersecurity practices in office environments. It turns the important habit of locking your computer when you step away into an engaging, donut-themed game.
 
 ## How It Works
-
+.
 1. 🔓 When an employee leaves their computer unlocked and unattended
 2. 👀 A colleague can use the unattended computer to visit this website
 3. 🍩 They log the "offender" in the system
